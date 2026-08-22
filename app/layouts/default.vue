@@ -1,11 +1,23 @@
 <template>
-	<header>
-		<nav>
-			<NuxtLink to="/">Home</NuxtLink>
-		</nav>
-	</header>
+	<div class="wrapper">
+		<Header />
 
-	<div>
-		<NuxtPage />
+		<main class="content">
+			<div class="container">
+				<NuxtPage />
+			</div>
+		</main>
+
+		<Footer />
 	</div>
+
 </template>
+
+
+<script setup lang='ts'></script>
+
+<style scoped lang='scss'>
+.content {
+	margin-top: 100px;
+}
+</style>

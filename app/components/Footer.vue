@@ -1,5 +1,9 @@
 <template>
-	<h1>Shop</h1>
+	<footer>
+		<div class="container">
+
+		</div>
+	</footer>
 </template>
 
 <script setup lang='ts'></script>
