@@ -76,14 +76,19 @@ h6 {
 	font-size: inherit;
 }
 
+// ============================== //
 .wrapper {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
-	padding: 0 15px;
 
 	>main {
 		flex: 1 1 auto;
 	}
+}
+
+body._lock {
+	overflow: hidden;
+	touch-action: none;
 }

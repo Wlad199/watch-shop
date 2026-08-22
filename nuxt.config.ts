@@ -6,7 +6,8 @@ export default defineNuxtConfig({
 		'@nuxt/fonts',
 		'@nuxt/image',
 		'@pinia/nuxt',
-		'@nuxt/icon'
+		'@nuxt/icon',
+		'@vee-validate/nuxt',
 	],
 	css: ['./app/assets/null.scss', './app/assets/style.scss'],
 	vite: {
@@ -14,7 +15,19 @@ export default defineNuxtConfig({
 			include: [
 				'@vue/devtools-core',
 				'@vue/devtools-kit',
+				'@vee-validate/zod',
+				'zod',
 			]
+		}
+	},
+	app: {
+		head: {
+			title: 'Template Nuxt4',
+			meta: [
+				{ charset: 'utf-8' },
+				{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
+				{ name: 'description', content: 'This project on Nuxt4' }
+			],
 		}
 	}
 })

@@ -1,5 +1,7 @@
 <template>
-	<p>aksdfnv</p>
+	<NuxtLayout>
+		<NuxtPage />
+	</NuxtLayout>
 </template>
 
 <script setup lang='ts'></script>
