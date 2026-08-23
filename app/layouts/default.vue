@@ -20,4 +20,8 @@
 .content {
 	margin-top: 100px;
 }
+
+.container {
+	background-color: #f5f7fa;
+}
 </style>

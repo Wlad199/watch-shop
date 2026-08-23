@@ -92,6 +92,7 @@ main {
 	top: 0;
 	left: 0;
 	z-index: 50;
+	background-color: #fff;
 
 	&::before {
 		content: '';
@@ -101,7 +102,7 @@ main {
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: #f5f7fa;
+		//background-color: #f5f7fa;
 		z-index: 2;
 	}
 }
