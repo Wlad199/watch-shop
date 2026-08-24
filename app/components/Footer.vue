@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="footer-top">
 				<div class="footer-top__column">
-					<a href="/" class="logo">MiniStore</a>
+					<a href="/" class="logo">WatchStore</a>
 					<p class="text">Best information about the company gies here but now lorem ipsum is</p>
 					<ul class="app-list">
 						<li>
@@ -171,11 +171,22 @@
 }
 
 .footer-bottom {
-	background-color: #f5f7fa;
+	//background-color: #f5f7fa;
 	padding: 25px 0;
 	text-align: center;
 	color: #606060;
 	font-size: 16px;
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-color: #c1c1c1;
+	}
 }
 
 .icon {

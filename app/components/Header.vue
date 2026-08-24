@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="header-body">
 
-				<a href="/" class="logo">MiniStore</a>
+				<a href="/" class="logo">WatchStore</a>
 
 				<nav class="menu" :class="{ _active: isOpenMenu }">
 					<ul class="list" @click="closeMenu">
@@ -21,7 +21,12 @@
 
 				<div class="icons">
 					<UserIcon height="1em" />
-					<HeartIcon height="1em" />
+					<IconWithBadge>
+						<HeartIcon height="1em" />
+					</IconWithBadge>
+					<IconWithBadge>
+						<Icon name="ph:shopping-cart-simple-light" height="1em" />
+					</IconWithBadge>
 				</div>
 				<div @click="toggleMenu" class="burger" :class="{ _active: isOpenMenu }">
 					<span></span>
@@ -34,6 +39,7 @@
 <script setup lang='ts'>
 import UserIcon from '@iconify-vue/griddy-icons/user';
 import HeartIcon from '@iconify-vue/griddy-icons/heart';
+import IconWithBadge from './elements/IconWithBadge.vue';
 
 const isOpenMenu = ref(false)
 
