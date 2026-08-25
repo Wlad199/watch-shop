@@ -1,6 +1,6 @@
 <template>
 	<div class="wrapper">
-		<Header />
+		<Header :class="{ _scroll: isScrolled }" />
 
 		<main class="content">
 			<NuxtPage />
@@ -12,11 +12,28 @@
 </template>
 
 
-<script setup lang='ts'></script>
+<script setup lang='ts'>
+const isScrolled = ref(false)
+
+const handleScroll = () => {
+	isScrolled.value = window.scrollY > 30
+}
+onMounted(() => {
+	window.addEventListener('scroll', handleScroll);
+});
+
+onUnmounted(() => {
+	window.removeEventListener('scroll', handleScroll);
+});
+</script>
 
 <style scoped lang='scss'>
 .content {
-	margin-top: 100px;
+	margin-top: 70px;
+
+	@media (max-width: 767px) {
+		margin-top: 50px;
+	}
 }
 
 .container {

@@ -138,7 +138,7 @@
 	font-size: 40px;
 	user-select: none;
 
-	@media (max-width: 767px) {
+	@media (max-width: 992px) {
 		font-size: 32px;
 	}
 

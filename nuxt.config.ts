@@ -8,6 +8,7 @@ export default defineNuxtConfig({
 		'@pinia/nuxt',
 		'@nuxt/icon',
 		'@vee-validate/nuxt',
+		'@vueuse/nuxt',
 	],
 	css: ['./app/assets/null.scss', './app/assets/style.scss'],
 	vite: {
@@ -29,5 +30,8 @@ export default defineNuxtConfig({
 				{ name: 'description', content: 'This project on Nuxt4' }
 			],
 		}
+	},
+	image: {
+		quality: 80
 	}
 })

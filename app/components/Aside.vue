@@ -1,5 +1,9 @@
 <template>
 	<div class="aside">
+		<Icon
+			name="material-symbols:close-rounded"
+			class="close-aside"
+			@click="$emit('update-aside')" />
 		<div class="parameter">
 			<h3 class="title">Price</h3>
 			<div class="input-wrapper">
@@ -39,6 +43,9 @@ const isWaterResist = ref(false)
 const isHighRating = ref(false)
 const isDiscounts = ref(false)
 
+const emit = defineEmits(['update-aside'])
+
+
 
 </script>
 
@@ -48,15 +55,42 @@ $primary-color: #6750a4;
 .aside {
 	flex: 0 0 260px;
 	background-color: #fff;
-	min-height: 700px;
 	border-radius: 15px;
 	padding: 5px;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	margin-bottom: 20px;
+	margin: 20px 0;
+	align-self: start;
+	position: sticky;
+	top: 60px;
+	overflow-y: auto;
+	position: relative;
+
+	@media (max-width: 992px) {
+		position: absolute;
+		z-index: 1;
+		width: 260px;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+		left: -300px;
+		transition: all 0.2s ease 0s;
+	}
 }
 
-.parameter {
+.close-aside {
+	position: absolute;
+	font-size: 25px;
+	top: 8px;
+	right: 8px;
+	cursor: pointer;
+}
+
+.aside._active {
+	@media (max-width: 992px) {
+		left: 10px;
+	}
+}
+
+.parameter:not(:last-child) {
 	margin-bottom: 35px;
 }
 
@@ -88,9 +122,3 @@ $primary-color: #6750a4;
 	font-size: 20px;
 }
 </style>
-
-<template></template>
-
-<script setup lang='ts'></script>
-
-<style scoped lang='scss'></style>

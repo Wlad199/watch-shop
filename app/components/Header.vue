@@ -25,7 +25,7 @@
 						<HeartIcon height="1em" />
 					</IconWithBadge>
 					<IconWithBadge>
-						<Icon name="ph:shopping-cart-simple-light" height="1em" />
+						<Cart16RegularIcon height="1em" />
 					</IconWithBadge>
 				</div>
 				<div @click="toggleMenu" class="burger" :class="{ _active: isOpenMenu }">
@@ -40,6 +40,7 @@
 import UserIcon from '@iconify-vue/griddy-icons/user';
 import HeartIcon from '@iconify-vue/griddy-icons/heart';
 import IconWithBadge from './elements/IconWithBadge.vue';
+import Cart16RegularIcon from '@iconify-vue/fluent/cart-16-regular';
 
 const isOpenMenu = ref(false)
 
@@ -59,19 +60,6 @@ const closeMenu = (e: MouseEvent) => {
 <style scoped lang='scss'>
 $primary-color: #6750a4;
 
-// Запрет прокрутки страницы
-body._lock {
-	overflow: hidden;
-}
-
-main {
-	margin-top: 100px;
-
-	@media (max-width: 767px) {
-		margin-top: 60px;
-	}
-}
-
 // Подсветка выбранной страницы
 .router-link-active {
 	color: $primary-color;
@@ -81,7 +69,7 @@ main {
 		&:after {
 			content: '';
 			position: absolute;
-			bottom: -24px;
+			bottom: -20px;
 			left: 0;
 			width: 100%;
 			height: 2px;
@@ -108,17 +96,29 @@ main {
 		left: 0;
 		width: 100%;
 		height: 100%;
-		//background-color: #f5f7fa;
 		z-index: 2;
+	}
+}
+
+.header._scroll .header-body {
+	height: 50px;
+}
+
+.header._scroll .router-link-active {
+	@media (min-width: 767px) {
+		&:after {
+			bottom: -9px;
+		}
 	}
 }
 
 .header-body {
 	position: relative;
-	height: 80px;
+	height: 70px;
 	display: flex;
 	align-items: center;
 	z-index: 2;
+	transition: height 0.2s ease 0s;
 
 	@media (max-width: 767px) {
 		height: 50px;
@@ -195,6 +195,7 @@ main {
 		padding-top: 70px;
 		transition: all 0.2s ease 0s;
 		overflow: auto;
+		z-index: 1;
 
 		&._active {
 			top: 0;
@@ -212,6 +213,10 @@ main {
 		font-size: 28px;
 		transition: all 0.2s ease 0s;
 		height: 100%;
+
+		@media (max-width: 992px) {
+			font-size: 24px;
+		}
 
 		&:hover {
 			color: $primary-color;
@@ -235,8 +240,12 @@ main {
 	margin-right: auto;
 	user-select: none;
 
-	@media (max-width: 767px) {
+	@media (max-width: 992px) {
 		font-size: 32px;
+	}
+
+	@media (max-width: 500px) {
+		font-size: 24px;
 	}
 }
 
@@ -250,6 +259,12 @@ main {
 
 	svg:hover {
 		color: $primary-color;
+	}
+
+	@media (max-width: 500px) {
+		gap: 10px;
+		margin-left: 10px;
+		font-size: 25px;
 	}
 }
 </style>
