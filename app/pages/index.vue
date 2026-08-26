@@ -39,7 +39,11 @@ onClickOutside(asideRef, () => {
 	}
 })
 
-const { data: products, pending, error } = await useFetch<Product[]>('/api/products')
+const route = useRoute();
+
+const { data: products } = await useFetch('/api/products', {
+	query: computed(() => route.query)
+})
 
 </script>
 

@@ -4,27 +4,44 @@
 			<div class="parameter">
 				<h3 class="title">Price</h3>
 				<div class="input-wrapper">
-					<input type="number" placeholder="min price">
-					<input type="number" placeholder="max price">
+					<input
+						type="number"
+						placeholder="0"
+						v-model="minPrice"
+						step="10"
+						min="0"
+						@change="(e) => updateFilter('minPrice', (e.target as HTMLInputElement).value)">
+					<input
+						type="number"
+						placeholder="∞"
+						v-model="maxPrice"
+						step="10"
+						min="0"
+						@change="(e) => updateFilter('maxPrice', (e.target as HTMLInputElement).value)">
 				</div>
 			</div>
 			<div class="parameter">
 				<h3 class="title">Type</h3>
-				<CheckboxSimple class="checkbox" name="mechanical" v-model="isMechanical" />
-				<CheckboxSimple class="checkbox" name="quartz" v-model="isQuartz" />
+				<CheckboxSimple
+					class="checkbox"
+					v-for="t in types" :key="t"
+					:name="t"
+					:modelValue="isTypeSelected(t)"
+					@update:modelValue="(val) => updateArrayFilter('type', t, val)" />
 			</div>
 			<div class="parameter">
 				<h3 class="title">Brands</h3>
-				<CheckboxSimple class="checkbox" name="Casio" v-model="isCasio" />
-				<CheckboxSimple class="checkbox" name="Rolex" v-model="isRolex" />
-				<CheckboxSimple class="checkbox" name="Ceiko" v-model="isSeiko" />
-				<CheckboxSimple class="checkbox" name="Vostok" v-model="isVostok" />
-				<CheckboxSimple class="checkbox" name="Omega" v-model="isOmega" />
+				<CheckboxSimple
+					class="checkbox"
+					v-for="b in brands" :key="b"
+					:name="b"
+					:modelValue="isBrandSelected(b)"
+					@update:modelValue="(val) => updateArrayFilter('brand', b, val)" />
 			</div>
 			<div class="parameter">
-				<CheckbixSwitch class="checkbox" name="Water resistance" v-model="isWaterResist" />
-				<CheckbixSwitch class="checkbox" name="High rating" v-model="isHighRating" />
-				<CheckbixSwitch class="checkbox" name="Discounts" v-model="isDiscounts" />
+				<CheckboxSwitch class="checkbox" name="Water resistance" v-model="isWaterResist" />
+				<CheckboxSwitch class="checkbox" name="High rating" v-model="isHighRating" />
+				<CheckboxSwitch class="checkbox" name="Discounts" v-model="isDiscounts" />
 			</div>
 		</div>
 		<button @click="$emit('update-aside')" class="close-aside">Close</button>
@@ -32,23 +49,37 @@
 </template>
 
 <script setup lang='ts'>
-import CheckbixSwitch from './elements/CheckboxSwitch.vue';
 import CheckboxSimple from './elements/CheckboxSimple.vue';
+import CheckboxSwitch from './elements/CheckboxSwitch.vue';
+const { updateArrayFilter, updateFilter } = useProductFilters();
 
-const isMechanical = ref(false)
-const isQuartz = ref(false)
+const emit = defineEmits(['update-aside'])
 
-const isCasio = ref(false)
-const isRolex = ref(false)
-const isSeiko = ref(false)
-const isVostok = ref(false)
-const isOmega = ref(false)
+const route = useRoute()
+
+// Max/Min price filter
+const minPrice = ref(route.query.minPrice || '')
+const maxPrice = ref(route.query.maxPrice || '')
+
+// type filter (mechanical / digital)
+const types = ref(['mechanical', 'digital']);
+const isTypeSelected = (type: string) => {
+	const t = route.query.type;
+	return Array.isArray(t) ? t.includes(type) : t === type;
+}
+
+// Brand filter
+const brands = ref(['Casio', 'Rolex', 'Seico', 'Vostok', 'Omega'])
+const isBrandSelected = (brand: string) => {
+	const b = route.query.brand
+	return Array.isArray(b) ? b.includes(brand) : b === brand
+}
+
 
 const isWaterResist = ref(false)
 const isHighRating = ref(false)
 const isDiscounts = ref(false)
 
-const emit = defineEmits(['update-aside'])
 
 </script>
 
@@ -67,7 +98,6 @@ $primary-color: #6750a4;
 	position: sticky;
 	top: 60px;
 	overflow-y: auto;
-	position: relative;
 
 	@media (max-width: 992px) {
 		position: absolute;
