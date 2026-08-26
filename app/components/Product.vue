@@ -1,14 +1,16 @@
 <template>
 	<div class="product">
+		<!--<HeartIcon height="1em" class="like" />-->
+		<Icon name="material-symbols:favorite-rounded" class="like" />
 		<div class="adaptive-image">
-			<NuxtImg src="/img/products/image.png" format="webp" />
+			<NuxtImg :src="product.image_url" format="webp" :alt="product.title" />
 		</div>
 		<div class="decription">
 			<div class="price">
-				<span class="price__current">$99.50</span>
-				<span class="price__old">$1128.00</span>
+				<span class="price__current">${{ product.price }}</span>
+				<span v-if="product.old_price" class="price__old">${{ product.old_price }}</span>
 			</div>
-			<div class="rating"><svg width="80" height="16" viewBox="0 0 80 16" fill="none"
+			<!--<div class="rating"><svg width="80" height="16" viewBox="0 0 80 16" fill="none"
 					xmlns="http://www.w3.org/2000/svg">
 					<path fill-rule="evenodd" clip-rule="evenodd"
 						d="M72 12.2388L76.944 15.2284L75.632 9.59391L80 5.80283L74.248 5.31392L72 0L69.752 5.31392L64 5.80283L68.368 9.59391L67.056 15.2284L72 12.2388Z"
@@ -27,21 +29,37 @@
 						fill="#FF9017" />
 				</svg>
 				<span>7.5</span>
+			</div>-->
+			<div class="rating">
+				<ProductRating :rating="product.rating" />
 			</div>
-			<div class="name">GoPro HERO6 4K Action </div>
-			<div class="brand">Camera - Black</div>
+			<div class="name">{{ product.title }}</div>
+			<div class="brand">{{ product.brand }}</div>
 		</div>
+		<button class="add-product">Add to cart</button>
 	</div>
 </template>
 
-<script setup lang='ts'></script>
+<script setup lang='ts'>
+import type { Product } from '~/types/product';
+import HeartIcon from '@iconify-vue/griddy-icons/heart';
+import ProductRating from './elements/ProductRating.vue';
+
+
+const props = defineProps<{
+	product: Product
+}>()
+
+</script>
 
 <style scoped lang='scss'>
+$primary-color: #6750a4;
+
 .product {
 	flex: 0 0 300px;
-	//width: 300px;
 	background-color: #fff;
 	border-radius: 15px;
+	position: relative;
 
 	@media (max-width: 1300px) {
 		flex: 0 0 250px;
@@ -95,5 +113,37 @@
 
 .brand {
 	color: #606060;
+}
+
+.add-product {
+	background-color: $primary-color;
+	height: 40px;
+	width: 100%;
+	border-radius: 8px;
+	color: #fff;
+	font-size: 18px;
+	transition: all 0.2s ease 0s;
+	//margin-top: 10px;
+
+	&:hover {
+		background-color: #503e7d;
+	}
+}
+
+.like {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	z-index: 1;
+	font-size: 30px;
+	cursor: pointer;
+	transition: all 0.2s ease 0s;
+	color: #aaaaaa;
+
+	&:hover {
+		color: red;
+		//fill: red;
+		//stroke: red;
+	}
 }
 </style>

@@ -1,32 +1,33 @@
 <template>
 	<div class="aside">
-		<Icon
-			name="material-symbols:close-rounded"
-			class="close-aside"
-			@click="$emit('update-aside')" />
-		<div class="parameter">
-			<h3 class="title">Price</h3>
-			<div class="input-wrapper">
-				<input type="number" placeholder="min price">
-				<input type="number" placeholder="max price">
+		<div class="parameter-wrapper">
+			<div class="parameter">
+				<h3 class="title">Price</h3>
+				<div class="input-wrapper">
+					<input type="number" placeholder="min price">
+					<input type="number" placeholder="max price">
+				</div>
+			</div>
+			<div class="parameter">
+				<h3 class="title">Type</h3>
+				<CheckboxSimple class="checkbox" name="mechanical" v-model="isMechanical" />
+				<CheckboxSimple class="checkbox" name="quartz" v-model="isQuartz" />
+			</div>
+			<div class="parameter">
+				<h3 class="title">Brands</h3>
+				<CheckboxSimple class="checkbox" name="Casio" v-model="isCasio" />
+				<CheckboxSimple class="checkbox" name="Rolex" v-model="isRolex" />
+				<CheckboxSimple class="checkbox" name="Ceiko" v-model="isSeiko" />
+				<CheckboxSimple class="checkbox" name="Vostok" v-model="isVostok" />
+				<CheckboxSimple class="checkbox" name="Omega" v-model="isOmega" />
+			</div>
+			<div class="parameter">
+				<CheckbixSwitch class="checkbox" name="Water resistance" v-model="isWaterResist" />
+				<CheckbixSwitch class="checkbox" name="High rating" v-model="isHighRating" />
+				<CheckbixSwitch class="checkbox" name="Discounts" v-model="isDiscounts" />
 			</div>
 		</div>
-		<div class="parameter">
-			<h3 class="title">Type</h3>
-			<CheckboxSimple class="checkbox" name="mechanical" v-model="isMechanical" />
-			<CheckboxSimple class="checkbox" name="quartz" v-model="isQuartz" />
-		</div>
-		<div class="parameter">
-			<h3 class="title">Brands</h3>
-			<CheckboxSimple class="checkbox" name="Casio" v-model="isCasio" />
-			<CheckboxSimple class="checkbox" name="Rolex" v-model="isRolex" />
-			<CheckboxSimple class="checkbox" name="Seiko" v-model="isSeiko" />
-		</div>
-		<div class="parameter">
-			<CheckbixSwitch class="checkbox" name="Water resistance" v-model="isWaterResist" />
-			<CheckbixSwitch class="checkbox" name="High rating" v-model="isHighRating" />
-			<CheckbixSwitch class="checkbox" name="Discounts" v-model="isDiscounts" />
-		</div>
+		<button @click="$emit('update-aside')" class="close-aside">Close</button>
 	</div>
 </template>
 
@@ -35,17 +36,19 @@ import CheckbixSwitch from './elements/CheckboxSwitch.vue';
 import CheckboxSimple from './elements/CheckboxSimple.vue';
 
 const isMechanical = ref(false)
-const isCasio = ref(false)
 const isQuartz = ref(false)
+
+const isCasio = ref(false)
 const isRolex = ref(false)
 const isSeiko = ref(false)
+const isVostok = ref(false)
+const isOmega = ref(false)
+
 const isWaterResist = ref(false)
 const isHighRating = ref(false)
 const isDiscounts = ref(false)
 
 const emit = defineEmits(['update-aside'])
-
-
 
 </script>
 
@@ -77,11 +80,27 @@ $primary-color: #6750a4;
 }
 
 .close-aside {
-	position: absolute;
-	font-size: 25px;
-	top: 8px;
-	right: 8px;
-	cursor: pointer;
+	display: none;
+
+	@media (max-width: 992px) {
+		display: block;
+		background-color: #c72007;
+		height: 40px;
+		width: 100%;
+		border-radius: 8px;
+		color: #fff;
+		font-size: 18px;
+		transition: all 0.2s ease 0s;
+		margin-top: 20px;
+
+		&:hover {
+			background-color: #a01906;
+		}
+	}
+
+	@media (max-width: 767px) {
+		margin-bottom: 10px;
+	}
 }
 
 .aside._active {

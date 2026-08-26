@@ -1,0 +1,490 @@
+[
+	{
+		"id": 2952322709,
+		"slug": "casio-wrist-watch-quartz",
+		"title": "Casio Wrist Watch Mechanical",
+		"brand": "Casio",
+		"price": 66.4,
+		"old_price": 144.5,
+		"description": "Japanese men's watch",
+		"type": "mechanical",
+		"stock": 2,
+		"image_url": "/img/products/01.webp",
+		"rating": 3.9,
+		"specs": {
+			"material": "steel"
+		}
+	},
+	{
+		"id": 1423948767,
+		"slug": "casio-wrist-watch-quartz",
+		"title": "Casio Wrist Watch Mechanical",
+		"brand": "Casio",
+		"price": 48.7,
+		"old_price": 90.3,
+		"description": "We present the elegant mechanical",
+		"type": "mechanical",
+		"stock": 4,
+		"image_url": "/img/products/02.webp",
+		"rating": 4.5,
+		"specs": {
+			"material": "steel"
+		}
+	},
+	{
+		"id": 3768080760,
+		"slug": "casio-wrist-watch-quartz",
+		"title": "Casio Wrist Watch Quartz",
+		"brand": "Casio",
+		"price": 174.7,
+		"old_price": null,
+		"description": "The Casio Pro Trek PRG",
+		"type": "digital",
+		"stock": 6,
+		"image_url": "/img/products/03.webp",
+		"rating": 4.5,
+		"specs": {
+			"material": "resin",
+			"water": true
+		}
+	},
+	{
+		"id": 2504523913,
+		"slug": "casio-wrist-watch-quartz",
+		"title": "Casio Wrist Watch Quartz",
+		"brand": "Casio",
+		"price": 102.2,
+		"old_price": 111.5,
+		"description": "Here is the 2021 evoluti",
+		"type": "digital",
+		"stock": 8,
+		"image_url": "/img/products/04.webp",
+		"rating": 4.1,
+		"specs": {
+			"material": "resin",
+			"water": true
+		}
+	},
+	{
+		"id": 2153950529,
+		"slug": "casio-wrist-watch-quartz",
+		"title": "Casio Wrist Watch Quartz",
+		"brand": "Casio",
+		"price": 261.6,
+		"old_price": null,
+		"description": "Top-end shock-resistant",
+		"type": "digital",
+		"stock": 10,
+		"image_url": "/img/products/05.webp",
+		"rating": 4.9,
+		"specs": {
+			"material": "resin"
+		}
+	},
+	{
+		"id": 2058442629,
+		"slug": "seiko-wrist-watch-quartz",
+		"title": "Seico Wrist Watch Mechanical",
+		"brand": "Seico",
+		"price": 227.2,
+		"old_price": 252.4,
+		"description": "These men's Seiko wrist",
+		"type": "mechanical",
+		"stock": 12,
+		"image_url": "/img/products/06.webp",
+		"rating": 4.7,
+		"specs": {
+			"material": "steel"
+		}
+	},
+	{
+		"id": 2058371350,
+		"slug": "seiko-wrist-watch-quartz",
+		"title": "Seico Wrist Watch Mechanical",
+		"brand": "Seico",
+		"price": 227.2,
+		"old_price": 252.4,
+		"description": "These men's Seiko wrist",
+		"type": "mechanical",
+		"stock": 14,
+		"image_url": "/img/products/07.webp",
+		"rating": 3.9,
+		"specs": {
+			"material": "steel"
+		}
+	},
+	{
+		"id": 3613883324,
+		"slug": "seiko-wrist-watch-quartz",
+		"title": "Seico Wrist Watch Quartz",
+		"brand": "Seico",
+		"price": 936.6,
+		"old_price": 1040.6,
+		"description": "These men's Seiko wrist",
+		"type": "digital",
+		"stock": 16,
+		"image_url": "/img/products/08.webp",
+		"rating": 4.9,
+		"specs": {
+			"material": "steel"
+		}
+	},
+	{
+		"id": 5088320816,
+		"slug": "seiko-wrist-watch-quartz",
+		"title": "Seico Wrist Watch Mechanical",
+		"brand": "Seico",
+		"price": 836.2,
+		"old_price": 845.1,
+		"description": "These men's Seiko wrist",
+		"type": "mechanical",
+		"stock": 18,
+		"image_url": "/img/products/09.webp",
+		"rating": 4.5,
+		"specs": {
+			"material": "steel"
+		}
+	},
+	{
+		"id": 5103506098,
+		"slug": "seiko-wrist-watch-quartz",
+		"title": "Seico Wrist Watch Mechanical",
+		"brand": "Seico",
+		"price": 557.3,
+		"old_price": null,
+		"description": "These men's Seiko wrist",
+		"type": "mechanical",
+		"stock": 20,
+		"image_url": "/img/products/10.webp",
+		"rating": 4.1,
+		"specs": {
+			"material": "steel"
+		}
+	},
+	{
+		"id": 368117370,
+		"slug": "vostok-wrist-watch-mechanical",
+		"title": "Vostok Wrist Watch Mechanical",
+		"brand": "Vostok",
+		"price": 75.5,
+		"old_price": 83.9,
+		"description": "Men's mechanical wrist",
+		"type": "mechanical",
+		"stock": 22,
+		"image_url": "/img/products/11.webp",
+		"rating": 4.5,
+		"specs": {
+			"material": "steel"
+		}
+	},
+	{
+		"id": 829080795,
+		"slug": "vostok-wrist-watch-mechanical",
+		"title": "Vostok Wrist Watch Mechanical",
+		"brand": "Vostok",
+		"price": 98.3,
+		"old_price": 103.5,
+		"description": "Men's mechanical wrist",
+		"type": "mechanical",
+		"stock": 24,
+		"image_url": "/img/products/12.webp",
+		"rating": 4.7,
+		"specs": {
+			"material": "steel"
+		}
+	},
+	{
+		"id": 632102500,
+		"slug": "vostok-wrist-watch-mechanical",
+		"title": "Vostok Wrist Watch Mechanical",
+		"brand": "Vostok",
+		"price": 89.3,
+		"old_price": null,
+		"description": "Men's mechanical wrist",
+		"type": "mechanical",
+		"stock": 26,
+		"image_url": "/img/products/13.webp",
+		"rating": 3.5,
+		"specs": {
+			"material": "steel"
+		}
+	},
+	{
+		"id": 177126799,
+		"slug": "vostok-wrist-watch-mechanical",
+		"title": "Vostok Wrist Watch Mechanical",
+		"brand": "Vostok",
+		"price": 49.3,
+		"old_price": null,
+		"description": "Men's mechanical wrist",
+		"type": "mechanical",
+		"stock": 28,
+		"image_url": "/img/products/14.webp",
+		"rating": 4.5,
+		"specs": {
+			"material": "steel"
+		}
+	},
+	{
+		"id": 2153704500,
+		"slug": "vostok-wrist-watch-mechanical",
+		"title": "Vostok Wrist Watch Mechanical",
+		"brand": "Vostok",
+		"price": 50.3,
+		"old_price": null,
+		"description": "Men's mechanical wrist",
+		"type": "mechanical",
+		"stock": 30,
+		"image_url": "/img/products/15.webp",
+		"rating": 4.9,
+		"specs": {
+			"material": "steel"
+		}
+	},
+	{
+		"id": 3733384795,
+		"slug": "rolex-wrist-watch",
+		"title": "Rolex Wrist Watch",
+		"brand": "Rolex",
+		"price": 152.8,
+		"old_price": 169.2,
+		"description": "Men's wristwatches in the",
+		"type": "mechanical",
+		"stock": 32,
+		"image_url": "/img/products/16.webp",
+		"rating": 3.9,
+		"specs": {
+			"material": "steel"
+		}
+	},
+	{
+		"id": 874046058,
+		"slug": "rolex-wrist-watch",
+		"title": "Rolex Wrist Watch",
+		"brand": "Rolex",
+		"price": 325.0,
+		"old_price": null,
+		"description": "Men's wristwatches in the",
+		"type": "mechanical",
+		"stock": 1,
+		"image_url": "/img/products/17.webp",
+		"rating": 5.0,
+		"specs": {
+			"material": "steel"
+		}
+	},
+	{
+		"id": 874045935,
+		"slug": "rolex-wrist-watch",
+		"title": "Rolex Wrist Watch",
+		"brand": "Rolex",
+		"price": 365.2,
+		"old_price": 387.2,
+		"description": "Men's wristwatches in the",
+		"type": "mechanical",
+		"stock": 2,
+		"image_url": "/img/products/18.webp",
+		"rating": 4.5,
+		"specs": {
+			"material": "steel"
+		}
+	},
+	{
+		"id": 3489833505,
+		"slug": "rolex-wrist-watch",
+		"title": "Rolex Wrist Watch",
+		"brand": "Rolex",
+		"price": 265.2,
+		"old_price": null,
+		"description": "Men's wristwatches in the",
+		"type": "mechanical",
+		"stock": 3,
+		"image_url": "/img/products/19.webp",
+		"rating": 4.2,
+		"specs": {
+			"material": "steel"
+		}
+	},
+	{
+		"id": 3267150448,
+		"slug": "rolex-wrist-watch",
+		"title": "Rolex Wrist Watch",
+		"brand": "Rolex",
+		"price": 365.2,
+		"old_price": 398.2,
+		"description": "Men's wristwatches in the",
+		"type": "mechanical",
+		"stock": 4,
+		"image_url": "/img/products/20.webp",
+		"rating": 3.9,
+		"specs": {
+			"material": "steel"
+		}
+	},
+	{
+		"id": 874049947,
+		"slug": "rolex-wrist-watch",
+		"title": "Rolex Wrist Watch",
+		"brand": "Rolex",
+		"price": 321.2,
+		"old_price": null,
+		"description": "Men's wristwatches in the",
+		"type": "mechanical",
+		"stock": 5,
+		"image_url": "/img/products/21.webp",
+		"rating": 4.2,
+		"specs": {
+			"material": "steel"
+		}
+	},
+	{
+		"id": 4662085202,
+		"slug": "omega-wrist-watch-quartz",
+		"title": "OMEGA Wrist Watch Quartz",
+		"brand": "Omega",
+		"price": 352.1,
+		"old_price": null,
+		"description": "We present to your atten",
+		"type": "mechanical",
+		"stock": 6,
+		"image_url": "/img/products/22.webp",
+		"rating": 3.6,
+		"specs": {
+			"material": "steel"
+		}
+	},
+	{
+		"id": 3640409942,
+		"slug": "omega-wrist-watch-quartz",
+		"title": "OMEGA Wrist Watch Quartz",
+		"brand": "Omega",
+		"price": 195.2,
+		"old_price": null,
+		"description": "We present to your atten",
+		"type": "mechanical",
+		"stock": 7,
+		"image_url": "/img/products/23.webp",
+		"rating": 4.5,
+		"specs": {
+			"material": "steel"
+		}
+	},
+	{
+		"id": 4725922860,
+		"slug": "omega-wrist-watch-quartz",
+		"title": "OMEGA Wrist Watch Quartz",
+		"brand": "Omega",
+		"price": 56.3,
+		"old_price": null,
+		"description": "We present to your atten",
+		"type": "mechanical",
+		"stock": 8,
+		"image_url": "/img/products/24.webp",
+		"rating": 5.0,
+		"specs": {
+			"material": "steel"
+		}
+	},
+	{
+		"id": 2763577753,
+		"slug": "casio-wrist-watch-quartz",
+		"title": "Casio Wrist Watch Mechanical",
+		"brand": "Casio",
+		"price": 19.3,
+		"old_price": 21.6,
+		"description": "Japanese men's watch",
+		"type": "digital",
+		"stock": 9,
+		"image_url": "/img/products/25.webp",
+		"rating": 4.9,
+		"specs": {
+			"material": "resin",
+			"water": true
+		}
+	},
+	{
+		"id": 3378690783,
+		"slug": "casio-wrist-watch-quartz",
+		"title": "Casio Wrist Watch Mechanical",
+		"brand": "Casio",
+		"price": 107.8,
+		"old_price": 131.3,
+		"description": "Japanese men's watch",
+		"type": "digital",
+		"stock": 10,
+		"image_url": "/img/products/26.webp",
+		"rating": 4.2,
+		"specs": {
+			"material": "resin",
+			"water": true
+		}
+	},
+	{
+		"id": 1872560298,
+		"slug": "casio-wrist-watch-quartz",
+		"title": "Casio Wrist Watch Mechanical",
+		"brand": "Casio",
+		"price": 6.3,
+		"old_price": 8.6,
+		"description": "Japanese men's watch",
+		"type": "digital",
+		"stock": 11,
+		"image_url": "/img/products/27.webp",
+		"rating": 3.9,
+		"specs": {
+			"material": "resin",
+			"water": true
+		}
+	},
+	{
+		"id": 4092698834,
+		"slug": "casio-wrist-watch-quartz",
+		"title": "Casio Wrist Watch Mechanical",
+		"brand": "Casio",
+		"price": 3.5,
+		"old_price": null,
+		"description": "Japanese men's watch",
+		"type": "digital",
+		"stock": 12,
+		"image_url": "/img/products/28.webp",
+		"rating": 4.7,
+		"specs": {
+			"material": "resin",
+			"water": true
+		}
+	},
+	{
+		"id": 1872560427,
+		"slug": "casio-wrist-watch-quartz",
+		"title": "Casio Wrist Watch Mechanical",
+		"brand": "Casio",
+		"price": 13.6,
+		"old_price": 16.3,
+		"description": "Japanese men's watch",
+		"type": "digital",
+		"stock": 13,
+		"image_url": "/img/products/29.webp",
+		"rating": 4.9,
+		"specs": {
+			"material": "resin",
+			"water": true
+		}
+	},
+	{
+		"id": 1872560233,
+		"slug": "casio-wrist-watch-quartz",
+		"title": "Casio Wrist Watch Mechanical",
+		"brand": "Casio",
+		"price": 6.1,
+		"old_price": null,
+		"description": "Japanese men's watch",
+		"type": "digital",
+		"stock": 14,
+		"image_url": "/img/products/30.webp",
+		"rating": 4.1,
+		"specs": {
+			"material": "resin",
+			"water": true
+		}
+	}
+]

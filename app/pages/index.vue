@@ -8,13 +8,7 @@
 					<SelectSimple v-model="sortBy" :options="optionsForSelect" />
 				</div>
 				<div class="products">
-					<Product />
-					<Product />
-					<Product />
-					<Product />
-					<Product />
-					<Product />
-					<Product />
+					<Product v-for="product in products" :key="product.id" :product="product" />
 				</div>
 			</div>
 		</div>
@@ -23,6 +17,7 @@
 
 <script setup lang='ts'>
 import SelectSimple from '~/components/elements/SelectSimple.vue';
+import type { Product } from '~/types/product';
 
 const sortBy = ref('cheapest')
 
@@ -43,6 +38,8 @@ onClickOutside(asideRef, () => {
 		isAsideShown.value = false
 	}
 })
+
+const { data: products, pending, error } = await useFetch<Product[]>('/api/products')
 
 </script>
 
