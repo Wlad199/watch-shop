@@ -10,13 +10,14 @@
 						v-model="minPrice"
 						step="10"
 						min="0"
+						:max="+maxPrice"
 						@change="(e) => updateFilter('minPrice', (e.target as HTMLInputElement).value)">
 					<input
 						type="number"
 						placeholder="∞"
 						v-model="maxPrice"
 						step="10"
-						min="0"
+						:min="+minPrice"
 						@change="(e) => updateFilter('maxPrice', (e.target as HTMLInputElement).value)">
 				</div>
 			</div>
@@ -58,7 +59,6 @@ import CheckboxSwitch from './elements/CheckboxSwitch.vue';
 const { updateArrayFilter, updateFilter, toggleFilter } = useProductFilters();
 
 const emit = defineEmits(['update-aside'])
-
 const route = useRoute()
 
 // Max/Min price filter
@@ -86,7 +86,6 @@ const switchFilters = [
 	{ key: 'discounts', label: 'Discounts' }
 ]
 const isFilterActive = (key: string) => route.query[key] === 'true'
-
 </script>
 
 <style scoped lang='scss'>
@@ -107,7 +106,7 @@ $primary-color: #6750a4;
 
 	@media (max-width: 992px) {
 		position: absolute;
-		z-index: 1;
+		z-index: 2;
 		width: 260px;
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 		left: -300px;

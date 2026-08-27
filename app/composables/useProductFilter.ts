@@ -32,7 +32,6 @@ export const useProductFilters = () => {
 		} else {
 			delete newQuery[key]
 		}
-		console.log("New Query to push:", newQuery);
 		router.push({ query: newQuery })
 	}
 

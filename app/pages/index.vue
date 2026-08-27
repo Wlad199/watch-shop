@@ -5,7 +5,6 @@
 			<div class="shop-content">
 				<div class="shop-sort">
 					<button @click="toggleAside">All categories</button>
-					<!--<SelectSimple v-model="sortBy" :options="optionsForSelect" />-->
 					<SelectSimple
 						:modelValue="(route.query.sort as string) || ''"
 						:options="optionsForSelect"
@@ -25,18 +24,12 @@ import type { Product } from '~/types/product';
 const { updateFilter } = useProductFilters();
 const route = useRoute()
 
-const sortBy = ref('cheapest')
-
 const optionsForSelect = [
+	{ label: 'Default', value: '' },
 	{ label: 'Cheapest', value: 'cheapest' },
 	{ label: 'Most expensive', value: 'expensive' },
 	{ label: 'Highly rated', value: 'rated' }
 ]
-//const optionsForSelect = [
-//	{ label: 'Price: Low to High', value: 'price-asc' },
-//	{ label: 'Price: High to Low', value: 'price-desc' },
-//	{ label: 'Highest Rating', value: 'rating-desc' }
-//]
 
 const isAsideShown = ref(false)
 const asideRef = ref(null)

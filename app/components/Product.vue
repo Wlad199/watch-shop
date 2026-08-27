@@ -2,7 +2,9 @@
 	<div class="product">
 		<Icon name="material-symbols:favorite-rounded" class="like" />
 		<div class="adaptive-image">
-			<NuxtImg :src="product.image_url" format="webp" :alt="product.title" />
+			<NuxtLink :to="`/catalog/${product.id}`">
+				<NuxtImg :src="product.image_url" format="webp" :alt="product.title" />
+			</NuxtLink>
 		</div>
 		<div class="decription">
 			<div class="price">
@@ -12,7 +14,11 @@
 			<div class="rating">
 				<ProductRating :rating="product.rating" />
 			</div>
-			<div class="name">{{ product.title }}</div>
+			<div class="name">
+				<NuxtLink :to="`/catalog/${product.id}`">
+					{{ product.title }}
+				</NuxtLink>
+			</div>
 			<div class="brand">{{ product.brand }}</div>
 		</div>
 		<button class="add-product">Add to cart</button>
