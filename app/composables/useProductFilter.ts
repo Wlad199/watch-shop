@@ -2,11 +2,11 @@ export const useProductFilters = () => {
 	const router = useRouter();
 	const route = useRoute();
 
-
+	// For inputs
 	const updateFilter = (key: string, value: string | null) => {
 		const newQuery = { ...route.query }
 
-		if (value) {
+		if (value && +value !== 0) {
 			newQuery[key] = value
 		} else {
 			delete newQuery[key]
@@ -14,6 +14,7 @@ export const useProductFilters = () => {
 		router.push({ query: newQuery })
 	}
 
+	// For Types, Brands
 	const updateArrayFilter = (key: string, value: string, isChecked: boolean) => {
 		const newQuery = { ...route.query }
 		let currentValues = Array.isArray(newQuery[key])
@@ -35,5 +36,16 @@ export const useProductFilters = () => {
 		router.push({ query: newQuery })
 	}
 
-	return { updateArrayFilter, updateFilter }
-};
+	//For toggle switchers
+	const toggleFilter = (key: string, isChecked: boolean) => {
+		const newQuery = { ...route.query }
+		if (isChecked) {
+			newQuery[key] = 'true'
+		} else {
+			delete newQuery[key]
+		}
+		router.push({ query: newQuery })
+	}
+
+	return { updateArrayFilter, updateFilter, toggleFilter }
+}

@@ -39,9 +39,13 @@
 					@update:modelValue="(val) => updateArrayFilter('brand', b, val)" />
 			</div>
 			<div class="parameter">
-				<CheckboxSwitch class="checkbox" name="Water resistance" v-model="isWaterResist" />
-				<CheckboxSwitch class="checkbox" name="High rating" v-model="isHighRating" />
-				<CheckboxSwitch class="checkbox" name="Discounts" v-model="isDiscounts" />
+				<CheckboxSwitch
+					v-for="filter in switchFilters"
+					:key="filter.key"
+					:name="filter.label"
+					:modelValue="isFilterActive(filter.key)"
+					@update:modelValue="(val) => toggleFilter(filter.key, val)"
+					class="checkbox" />
 			</div>
 		</div>
 		<button @click="$emit('update-aside')" class="close-aside">Close</button>
@@ -51,7 +55,7 @@
 <script setup lang='ts'>
 import CheckboxSimple from './elements/CheckboxSimple.vue';
 import CheckboxSwitch from './elements/CheckboxSwitch.vue';
-const { updateArrayFilter, updateFilter } = useProductFilters();
+const { updateArrayFilter, updateFilter, toggleFilter } = useProductFilters();
 
 const emit = defineEmits(['update-aside'])
 
@@ -75,11 +79,13 @@ const isBrandSelected = (brand: string) => {
 	return Array.isArray(b) ? b.includes(brand) : b === brand
 }
 
-
-const isWaterResist = ref(false)
-const isHighRating = ref(false)
-const isDiscounts = ref(false)
-
+// Other filters: Water resist, rating, discount
+const switchFilters = [
+	{ key: 'waterResist', label: 'Water resistance' },
+	{ key: 'highRating', label: 'High rating' },
+	{ key: 'discounts', label: 'Discounts' }
+]
+const isFilterActive = (key: string) => route.query[key] === 'true'
 
 </script>
 
