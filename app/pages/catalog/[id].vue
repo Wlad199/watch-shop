@@ -58,17 +58,22 @@
 	</div>
 
 	<div v-else-if="error" class="container">
-		<!--<h2>Товар не найден</h2>
-		<NuxtLink to="/products">Вернуться к списку</NuxtLink>-->
+		<div class="error-content">
+			<h1>Product not found</h1>
+			<p>Unfortunately, this product has been removed or the link is invalid.</p>
+			<ButtonLink path="/">
+				Go back
+			</ButtonLink>
+		</div>
 	</div>
 </template>
 
 <script setup lang='ts'>
+import ButtonLink from '~/components/elements/ButtonLink.vue';
 import ButtonSimple from '~/components/elements/ButtonSimple.vue';
 import type { Product } from '~/types/product';
 
 const { id } = useRoute().params
-console.log(id)
 
 const { data: product, error } = await useFetch<Product>(`/api/${id}`)
 
@@ -274,6 +279,20 @@ useHead({
 
 	&:hover {
 		color: red;
+	}
+}
+
+.error-content {
+	margin: 0 auto;
+	max-width: 767px;
+
+	h1 {
+		font-size: 28px;
+		padding: 30px 0;
+	}
+
+	p {
+		margin-bottom: 20px;
 	}
 }
 </style>

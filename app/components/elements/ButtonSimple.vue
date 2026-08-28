@@ -18,14 +18,14 @@ const { disabled, type } = defineProps<Props>()
 
 <style scoped lang='scss'>
 button {
-	background-color: #71aaff;
+	background-color: #745eb0;
 	padding: 10px 15px;
 	border-radius: 5px;
 	transition: all 0.2s ease 0s;
 	cursor: pointer;
 
 	&:hover {
-		background-color: #287eff;
+		background-color: #6750a4;
 	}
 
 	&:disabled {
