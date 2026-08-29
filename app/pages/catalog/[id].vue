@@ -116,6 +116,7 @@ useHead({
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		border-radius: 20px;
 	}
 }
 
@@ -269,8 +270,8 @@ useHead({
 
 .like {
 	position: absolute;
-	top: 5px;
-	right: 5px;
+	top: 12px;
+	right: 12px;
 	z-index: 1;
 	font-size: 30px;
 	cursor: pointer;

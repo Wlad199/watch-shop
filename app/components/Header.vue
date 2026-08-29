@@ -24,9 +24,11 @@
 					<IconWithBadge>
 						<HeartIcon height="1em" />
 					</IconWithBadge>
-					<IconWithBadge>
-						<Cart16RegularIcon height="1em" />
-					</IconWithBadge>
+					<NuxtLink to="/cart">
+						<IconWithBadge>
+							<Cart16RegularIcon height="1em" />
+						</IconWithBadge>
+					</NuxtLink>
 				</div>
 				<div @click="toggleMenu" class="burger" :class="{ _active: isOpenMenu }">
 					<span></span>

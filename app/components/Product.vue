@@ -130,8 +130,6 @@ $primary-color: #6750a4;
 
 	&:hover {
 		color: red;
-		//fill: red;
-		//stroke: red;
 	}
 }
 </style>
