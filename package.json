@@ -26,6 +26,7 @@
 		"@vueuse/nuxt": "^14.4.0",
 		"git": "^0.1.5",
 		"iconify": "^1.4.0",
+		"jsonwebtoken": "^9.0.3",
 		"nanoid": "^5.1.11",
 		"nuxt": "^4.4.8",
 		"pinia": "^3.0.4",
@@ -35,6 +36,7 @@
 		"zod": "^3.24.2"
 	},
 	"devDependencies": {
-		"@iconify-json/ic": "^1.2.4"
+		"@iconify-json/ic": "^1.2.4",
+		"@types/jsonwebtoken": "^9.0.10"
 	}
 }

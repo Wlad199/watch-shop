@@ -20,7 +20,9 @@
 				</nav>
 
 				<div class="icons">
-					<UserIcon height="1em" />
+					<NuxtLink to="/login">
+						<UserIcon height="1em" />
+					</NuxtLink>
 					<IconWithBadge>
 						<HeartIcon height="1em" />
 					</IconWithBadge>
