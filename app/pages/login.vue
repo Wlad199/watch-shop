@@ -54,32 +54,44 @@ import { useForm } from 'vee-validate'
 const authStore = useAuthStore()
 const isSignIn = ref(true)
 
-const schema = toTypedSchema(
+const signInSchema = toTypedSchema(
 	z.object({
-		name: z.string().min(2, 'minimum 2 simbols'),
-		password: z.string().min(6, 'minimum 6 simbols'),
-		confirmPassword: z.string()
-	}).refine((data) => data.password === data.confirmPassword, {
-		message: "Passwords don'l match",
-		path: ['confirmPassword'],
+		name: z.string().min(2, 'Minimum 2 symbols'),
+		password: z.string().min(6, 'Minimum 6 symbols'),
 	})
 )
 
-const { handleSubmit } = useForm({
-	validationSchema: schema
+const signUpSchema = toTypedSchema(
+	z.object({
+		name: z.string().min(2, 'Minimum 2 symbols'),
+		password: z.string().min(6, 'Minimum 6 symbols'),
+		confirmPassword: z.string(),
+	})
+		.refine((data) => data.password === data.confirmPassword, {
+			message: "Passwords don't match",
+			path: ['confirmPassword'],
+		})
+)
+
+const validationSchema = computed(() => isSignIn.value ? signInSchema : signUpSchema)
+
+const { handleSubmit, setErrors } = useForm({
+	validationSchema
 })
 
 const submitForm = handleSubmit(async (values) => {
 	try {
-		authStore.login(values.name, values.password)
-		navigateTo('/')
+		if (isSignIn.value) {
+			await authStore.login(values.name, values.password)
+		} else {
+			await authStore.register(values.name, values.password)
+		}
 	} catch (err) {
-		console.error(err)
+		if (err instanceof Error) {
+			console.log(err)
+			setErrors({ password: err.message || 'Authentication failed' })
+		}
 	}
-})
-
-watchEffect(() => {
-	console.log(authStore.user)
 })
 
 </script>

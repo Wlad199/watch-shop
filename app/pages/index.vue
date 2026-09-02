@@ -50,11 +50,9 @@ onClickOutside(asideRef, () => {
 	}
 })
 
-
 const { data: products, error } = await useFetch<Product[]>('/api/products', {
 	query: computed(() => route.query)
 })
-
 
 watchEffect(() => {
 	if (error.value) {
