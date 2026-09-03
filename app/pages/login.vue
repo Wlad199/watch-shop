@@ -45,7 +45,7 @@
 </template>
 
 <script setup lang='ts'>
-import InputWithValidate from '~/components/elements/InputWithValidate.vue';
+import InputWithValidate from '~/components/elements/InputWithValidate.vue'
 
 import * as z from 'zod'
 import { toTypedSchema } from '#imports'

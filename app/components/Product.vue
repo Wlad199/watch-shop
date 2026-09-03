@@ -21,19 +21,33 @@
 			</div>
 			<div class="brand">{{ product.brand }}</div>
 		</div>
-		<button class="add-product">Add to cart</button>
+		<button @click="addToCart" class="add-product">Add to cart</button>
 	</div>
 </template>
 
 <script setup lang='ts'>
 import type { Product } from '~/types/product';
 import ProductRating from './elements/ProductRating.vue';
-
+import type CartItem from '~/types/cartItem.ts';
 
 const props = defineProps<{
 	product: Product
 }>()
 
+const cartStore = useCartStore()
+
+const addToCart = () => {
+	const itemToAdd: CartItem = {
+		id: props.product.id,
+		title: props.product.title,
+		brand: props.product.brand,
+		imageUrl: props.product.image_url,
+		price: props.product.price,
+		oldPrice: props.product.old_price,
+		quantity: 1
+	}
+	cartStore.addItem(itemToAdd)
+}
 </script>
 
 <style scoped lang='scss'>

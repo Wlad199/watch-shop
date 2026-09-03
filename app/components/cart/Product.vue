@@ -1,31 +1,31 @@
 <template>
 	<li class="product">
 		<div class="product__image">
-			<NuxtImg src="/img/products/05.webp" />
+			<NuxtImg :src="product.imageUrl" />
 		</div>
 		<div class="product__description">
-			<h3 class="description__title">Casio Wrist Watch Quartz</h3>
-			<div class="description__brand">Casio</div>
+			<h3 class="description__title">{{ product.title }}</h3>
+			<div class="description__brand">{{ product.brand }}</div>
 			<div class="description__action">
 				<div class="description__like">
 					<Icon name="material-symbols:favorite-rounded" class="icon like" />
 				</div>
-				<div class="description__delete">
+				<div @click="removeItem(product.id)" class="description__delete">
 					<Icon name="ic:baseline-delete-forever" class="icon delete" />
 				</div>
 			</div>
 		</div>
 		<div class="product__price">
-			<div class="price__current">$ 66.4</div>
-			<div class="price__old">$ 144.5</div>
+			<div class="price__current">$ {{ productAmountPrice }}</div>
+			<div class="price__old" v-if="product.oldPrice">$ {{ productAmountOldPrice }}</div>
 		</div>
 		<div class="product__quantity">
 			<div class="count">
-				<span>
+				<span @click="updateQuantity(product.id, -1)">
 					<Icon name="ic:outline-minus" class="icon" />
 				</span>
-				<span>2</span>
-				<span>
+				<span>{{ product.quantity }}</span>
+				<span @click="updateQuantity(product.id, 1)">
 					<Icon name="material-symbols:add-2" class="icon" />
 				</span>
 			</div>
@@ -34,7 +34,26 @@
 	</li>
 </template>
 
-<script setup lang='ts'></script>
+<script setup lang='ts'>
+import type CartItem from '~/types/cartItem';
+
+const props = defineProps<{
+	product: CartItem
+}>()
+
+const cartStore = useCartStore()
+const { updateQuantity, removeItem } = cartStore
+
+const productAmountPrice = computed(() => {
+	return (props.product.price * props.product.quantity).toFixed(1)
+})
+const productAmountOldPrice = computed(() => {
+	if (props.product.oldPrice) {
+		return (props.product.oldPrice * props.product.quantity).toFixed(1)
+	}
+})
+
+</script>
 
 <style scoped lang='scss'>
 .product {

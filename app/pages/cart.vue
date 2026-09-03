@@ -4,9 +4,8 @@
 			<div class="products">
 				<h3 class="label">Available for order</h3>
 				<ul class="product-list">
-					<CartProduct />
-					<CartProduct />
-					<CartProduct />
+					<!--<CartProduct />-->
+					<CartProduct v-for="item in cartStore.items" :key="item.id" :product="item" />
 				</ul>
 			</div>
 			<CartOrder class="cart-order" />
@@ -14,7 +13,11 @@
 	</div>
 </template>
 
-<script setup lang='ts'></script>
+<script setup lang='ts'>
+
+const cartStore = useCartStore()
+
+</script>
 
 <style scoped lang='scss'>
 .cart-wrapper {

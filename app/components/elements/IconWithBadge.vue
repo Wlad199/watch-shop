@@ -1,11 +1,14 @@
 <template>
 	<div class="icon-wrapper">
 		<slot />
-		<div class="badge">5</div>
+		<div :class="{ badge: quantity }">{{ quantity ? quantity : '' }}</div>
 	</div>
 </template>
 
 <script setup lang='ts'>
+const props = defineProps<{
+	quantity: number
+}>()
 </script>
 
 <style scoped lang='scss'>

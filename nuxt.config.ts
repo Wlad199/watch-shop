@@ -36,6 +36,6 @@ export default defineNuxtConfig({
 		//quality: 80
 	},
 	plugins: [
-		'~/plugins/auth.ts'
+		//'~/plugins/auth.ts'
 	]
 })

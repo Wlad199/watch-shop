@@ -58,10 +58,10 @@ watchEffect(() => {
 	if (error.value) {
 		console.error('Fetch error on watchEffect:', error.value)
 
-		if (error.value.statusCode === 404 || error.value.statusCode === 500) {
+		if (error.value.status === 404 || error.value.status === 500) {
 			throw createError({
-				statusCode: error.value.statusCode,
-				statusMessage: error.value.statusMessage || 'Произошла ошибка',
+				statusCode: error.value.status,
+				statusMessage: error.value.message || 'Произошла ошибка',
 				data: error.value.data
 			})
 		}

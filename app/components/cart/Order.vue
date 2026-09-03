@@ -2,16 +2,16 @@
 	<div class="order">
 		<h2>Your cart</h2>
 		<div class="order__price row">
-			<span>Products (2)</span>
-			<span>$ 174.7</span>
+			<span>Products ({{ totalProduct }})</span>
+			<span>$ {{ totalPrice }}</span>
 		</div>
 		<div class="order__discount row">
 			<span>Discount</span>
-			<span>$ 253.7</span>
+			<span>$ {{ discountAmount }}</span>
 		</div>
 		<div class="order__total row">
 			<h2>Total</h2>
-			<span>$ 356.2</span>
+			<span>$ {{ totalPrice }}</span>
 		</div>
 		<ButtonSimple type="button">Go to order</ButtonSimple>
 	</div>
@@ -20,6 +20,8 @@
 <script setup lang='ts'>
 import ButtonSimple from '../elements/ButtonSimple.vue';
 
+const cartStore = useCartStore()
+const { totalProduct, totalPrice, discountAmount } = storeToRefs(cartStore)
 
 </script>
 

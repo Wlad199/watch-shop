@@ -23,11 +23,11 @@
 					<NuxtLink to="/login">
 						<UserIcon height="1em" />
 					</NuxtLink>
-					<IconWithBadge>
+					<IconWithBadge :quantity="5">
 						<HeartIcon height="1em" />
 					</IconWithBadge>
 					<NuxtLink to="/cart">
-						<IconWithBadge>
+						<IconWithBadge :quantity="cartStore.totalProduct">
 							<Cart16RegularIcon height="1em" />
 						</IconWithBadge>
 					</NuxtLink>
@@ -58,6 +58,8 @@ const closeMenu = (e: MouseEvent) => {
 		document.body.classList.remove('_lock')
 	}
 }
+
+const cartStore = useCartStore()
 
 </script>
 
