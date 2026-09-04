@@ -27,7 +27,7 @@
 						<HeartIcon height="1em" />
 					</IconWithBadge>
 					<NuxtLink to="/cart">
-						<IconWithBadge :quantity="cartStore.totalProduct">
+						<IconWithBadge :quantity="totalProductInCart">
 							<Cart16RegularIcon height="1em" />
 						</IconWithBadge>
 					</NuxtLink>
@@ -60,6 +60,15 @@ const closeMenu = (e: MouseEvent) => {
 }
 
 const cartStore = useCartStore()
+const authStore = useAuthStore()
+
+const totalProductInCart = computed(() => {
+	if (authStore.user) {
+		return cartStore.totalProduct
+	} else {
+		return 0
+	}
+})
 
 </script>
 

@@ -1,7 +1,13 @@
 import type CartItem from "~/types/cartItem"
 
 export const useCartStore = defineStore('cart', () => {
-	const items = ref<CartItem[]>([])
+	//const items = ref<CartItem[]>([])
+
+	const items = useCookie<CartItem[]>('cart_items', {
+		default: () => [],
+		watch: true,
+		maxAge: 60 * 60 * 24 * 7
+	})
 
 	const totalProduct = computed(() => {
 		return items.value.reduce((acc, item) => acc + item.quantity, 0)

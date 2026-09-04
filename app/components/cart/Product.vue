@@ -1,10 +1,12 @@
 <template>
 	<li class="product">
-		<div class="product__image">
+		<NuxtLink :to="`/catalog/${product.id}`" class="product__image">
 			<NuxtImg :src="product.imageUrl" />
-		</div>
+		</NuxtLink>
 		<div class="product__description">
-			<h3 class="description__title">{{ product.title }}</h3>
+			<NuxtLink :to="`/catalog/${product.id}`">
+				<h3 class="description__title">{{ product.title }}</h3>
+			</NuxtLink>
 			<div class="description__brand">{{ product.brand }}</div>
 			<div class="description__action">
 				<div class="description__like">
@@ -20,29 +22,22 @@
 			<div class="price__old" v-if="product.oldPrice">$ {{ productAmountOldPrice }}</div>
 		</div>
 		<div class="product__quantity">
-			<div class="count">
-				<span @click="updateQuantity(product.id, -1)">
-					<Icon name="ic:outline-minus" class="icon" />
-				</span>
-				<span>{{ product.quantity }}</span>
-				<span @click="updateQuantity(product.id, 1)">
-					<Icon name="material-symbols:add-2" class="icon" />
-				</span>
-			</div>
-			<p class="count-limit">Limited quantity</p>
+			<ElementsCounter :id="product.id" :quantity="product.quantity" :hasStock="hasInStock" />
+			<p v-if="hasInStock" class="count-limit">Limited quantity</p>
 		</div>
 	</li>
 </template>
 
 <script setup lang='ts'>
 import type CartItem from '~/types/cartItem';
+import type { Product } from '~/types/product';
 
 const props = defineProps<{
 	product: CartItem
 }>()
 
 const cartStore = useCartStore()
-const { updateQuantity, removeItem } = cartStore
+const { removeItem } = cartStore
 
 const productAmountPrice = computed(() => {
 	return (props.product.price * props.product.quantity).toFixed(1)
@@ -51,6 +46,12 @@ const productAmountOldPrice = computed(() => {
 	if (props.product.oldPrice) {
 		return (props.product.oldPrice * props.product.quantity).toFixed(1)
 	}
+})
+
+const { data } = await useFetch<Product>(`/api/${props.product.id}`)
+
+const hasInStock = computed(() => {
+	return (data.value?.stock || Infinity) <= props.product.quantity
 })
 
 </script>
@@ -172,48 +173,13 @@ const productAmountOldPrice = computed(() => {
 	}
 }
 
-.count {
-	background-color: #f5f7fa;
-	height: 40px;
-	min-width: 100px;
-	border-radius: 10px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-bottom: 15px;
 
-	@media (max-width: 600px) {
-		min-width: 60px;
-	}
-
-	.icon {
-		font-size: 25px;
-		cursor: pointer;
-		transition: all 0.2s ease 0s;
-
-		@media (max-width: 600px) {
-			font-size: 18px;
-		}
-
-		&:hover {
-			background-color: #f1117e;
-		}
-	}
-
-	span {
-		font-size: 22px;
-		padding: 0 5px;
-
-		@media (max-width: 600px) {
-			font-size: 18px;
-		}
-	}
-}
 
 .count-limit {
 	color: #f1117e;
 	font-size: 12px;
 	line-height: 130%;
+	margin-top: 15px;
 
 	@media (max-width: 600px) {
 		font-size: 10px;

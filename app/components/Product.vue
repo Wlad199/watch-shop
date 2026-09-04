@@ -21,7 +21,13 @@
 			</div>
 			<div class="brand">{{ product.brand }}</div>
 		</div>
-		<button @click="addToCart" class="add-product">Add to cart</button>
+		<button v-if="!isInCart" @click="addToCart" class="add-product">Add to cart</button>
+		<ElementsCounter
+			v-else
+			:id="product.id"
+			:quantity="quantity ? quantity : 0"
+			class="product-count"
+			:hasStock="hasInStock || false" />
 	</div>
 </template>
 
@@ -36,6 +42,17 @@ const props = defineProps<{
 
 const cartStore = useCartStore()
 
+const isInCart = computed(() => {
+	return cartStore.items.some(item => item.id === props.product.id)
+})
+
+const quantity = computed(() => {
+	const current = cartStore.items.find(item => item.id === props.product.id)
+	if (current) {
+		return current.quantity
+	}
+})
+
 const addToCart = () => {
 	const itemToAdd: CartItem = {
 		id: props.product.id,
@@ -48,6 +65,14 @@ const addToCart = () => {
 	}
 	cartStore.addItem(itemToAdd)
 }
+
+const { data } = await useFetch<Product>(`/api/${props.product.id}`)
+
+const hasInStock = computed(() => {
+	if (quantity.value) {
+		return (data.value?.stock || Infinity) <= quantity.value
+	}
+})
 </script>
 
 <style scoped lang='scss'>
@@ -145,5 +170,11 @@ $primary-color: #6750a4;
 	&:hover {
 		color: red;
 	}
+}
+
+.product-count {
+	background-color: $primary-color;
+	color: #fff;
+	justify-content: space-around;
 }
 </style>

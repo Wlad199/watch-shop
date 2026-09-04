@@ -19,7 +19,14 @@
 					<div class="card__price">$ {{ product.price }}</div>
 					<div v-if="product.old_price" class="card__old-price">$ {{ product.old_price }}</div>
 				</div>
-				<ButtonSimple type="button" class="button-cart">Add to cart</ButtonSimple>
+				<ButtonSimple
+					v-if="!isInCart"
+					@click="addToCart"
+					type="button"
+					class="button-cart">
+					Add to cart
+				</ButtonSimple>
+				<ElementsButtonLink v-else path="/cart">Go to cart</ElementsButtonLink>
 				<ul class="card__params">
 					<li>
 						<span>Type</span>
@@ -71,6 +78,7 @@
 <script setup lang='ts'>
 import ButtonLink from '~/components/elements/ButtonLink.vue';
 import ButtonSimple from '~/components/elements/ButtonSimple.vue';
+import type CartItem from '~/types/cartItem';
 import type { Product } from '~/types/product';
 
 const { id } = useRoute().params
@@ -80,6 +88,26 @@ const { data: product, error } = await useFetch<Product>(`/api/${id}`)
 useHead({
 	title: product.value ? product.value.title : 'Товар не найден'
 })
+
+const cartStore = useCartStore()
+
+const isInCart = computed(() => {
+	return cartStore.items.some(item => item.id === product.value?.id)
+})
+const addToCart = () => {
+	if (product.value) {
+		const itemToAdd: CartItem = {
+			id: product.value.id,
+			title: product.value.title,
+			brand: product.value.brand,
+			imageUrl: product.value.image_url,
+			price: product.value.price,
+			oldPrice: product.value.old_price,
+			quantity: 1
+		}
+		cartStore.addItem(itemToAdd)
+	}
+}
 
 </script>
 

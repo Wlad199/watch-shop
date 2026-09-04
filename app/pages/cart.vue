@@ -2,9 +2,8 @@
 	<div class="container">
 		<div class="cart-wrapper">
 			<div class="products">
-				<h3 class="label">Available for order</h3>
+				<h3 class="label">{{ cartStore.items.length > 0 ? 'Available for order' : 'Cart is empty' }}</h3>
 				<ul class="product-list">
-					<!--<CartProduct />-->
 					<CartProduct v-for="item in cartStore.items" :key="item.id" :product="item" />
 				</ul>
 			</div>

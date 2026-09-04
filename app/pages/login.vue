@@ -88,7 +88,6 @@ const submitForm = handleSubmit(async (values) => {
 		}
 	} catch (err) {
 		if (err instanceof Error) {
-			console.log(err)
 			setErrors({ password: err.message || 'Authentication failed' })
 		}
 	}
