@@ -10,7 +10,8 @@
 			<div class="description__brand">{{ product.brand }}</div>
 			<div class="description__action">
 				<div class="description__like">
-					<Icon name="material-symbols:favorite-rounded" class="icon like" />
+					<!--<Icon name="material-symbols:favorite-rounded" class="icon like" />-->
+					<ElementsLike :id="product.id" />
 				</div>
 				<div @click="removeItem(product.id)" class="description__delete">
 					<Icon name="ic:baseline-delete-forever" class="icon delete" />

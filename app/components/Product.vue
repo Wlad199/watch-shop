@@ -1,6 +1,6 @@
 <template>
 	<div class="product">
-		<Icon name="material-symbols:favorite-rounded" class="like" />
+		<ElementsLike :id="product.id" class="absolute" />
 		<div class="adaptive-image">
 			<NuxtLink :to="`/catalog/${product.id}`">
 				<NuxtImg :src="product.image_url" format="webp" :alt="product.title" />
@@ -61,7 +61,8 @@ const addToCart = () => {
 		imageUrl: props.product.image_url,
 		price: props.product.price,
 		oldPrice: props.product.old_price,
-		quantity: 1
+		quantity: 1,
+		isFavorit: false
 	}
 	cartStore.addItem(itemToAdd)
 }
@@ -154,21 +155,6 @@ $primary-color: #6750a4;
 
 	&:hover {
 		background-color: #503e7d;
-	}
-}
-
-.like {
-	position: absolute;
-	top: 5px;
-	right: 5px;
-	z-index: 1;
-	font-size: 30px;
-	cursor: pointer;
-	transition: all 0.2s ease 0s;
-	color: #aaaaaa;
-
-	&:hover {
-		color: red;
 	}
 }
 

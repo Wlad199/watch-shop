@@ -5,7 +5,7 @@
 			<span>Products ({{ totalProduct }})</span>
 			<span>$ {{ totalPrice }}</span>
 		</div>
-		<div class="order__discount row">
+		<div v-if="+discountAmount" class="order__discount row">
 			<span>Discount</span>
 			<span>$ {{ discountAmount }}</span>
 		</div>
@@ -22,6 +22,8 @@ import ButtonSimple from '../elements/ButtonSimple.vue';
 
 const cartStore = useCartStore()
 const { totalProduct, totalPrice, discountAmount } = storeToRefs(cartStore)
+
+console.log(+discountAmount.value)
 
 </script>
 
@@ -67,23 +69,22 @@ h2 {
 		span:last-child {
 			color: #f11182;
 		}
+	}
 
+	&__total {
+		font-size: 26px;
+		margin-top: 30px;
 		position: relative;
-		margin-bottom: 30px;
 
 		&:after {
 			content: '';
 			position: absolute;
-			bottom: -10px;
+			top: -15px;
 			left: 0;
 			width: 100%;
 			height: 1px;
 			background-color: #cbd6e4;
 		}
-	}
-
-	&__total {
-		font-size: 26px;
 
 		span {
 			color: #18c451;

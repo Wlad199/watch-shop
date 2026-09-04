@@ -2,7 +2,8 @@
 	<div v-if="product" class="container">
 		<div class="good-wrapper">
 			<div class="image">
-				<Icon name="material-symbols:favorite-rounded" class="like" />
+				<!--<Icon name="material-symbols:favorite-rounded" class="like" />-->
+				<ElementsLike :id="product.id" class="absolute" />
 				<NuxtImg :src="product.image_url" format="webp" :alt="product.title" />
 			</div>
 			<div class="card">
@@ -103,7 +104,8 @@ const addToCart = () => {
 			imageUrl: product.value.image_url,
 			price: product.value.price,
 			oldPrice: product.value.old_price,
-			quantity: 1
+			quantity: 1,
+			isFavorit: false
 		}
 		cartStore.addItem(itemToAdd)
 	}

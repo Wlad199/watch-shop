@@ -23,7 +23,7 @@
 					<NuxtLink to="/login">
 						<UserIcon height="1em" />
 					</NuxtLink>
-					<IconWithBadge :quantity="5">
+					<IconWithBadge :quantity="wishList.list.length">
 						<HeartIcon height="1em" />
 					</IconWithBadge>
 					<NuxtLink to="/cart">
@@ -69,6 +69,8 @@ const totalProductInCart = computed(() => {
 		return 0
 	}
 })
+
+const wishList = useWishlistStore()
 
 </script>
 

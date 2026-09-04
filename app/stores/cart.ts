@@ -45,6 +45,13 @@ export const useCartStore = defineStore('cart', () => {
 	const clearCard = () => {
 		items.value = []
 	}
+	const toggleFavorit = (id: number) => {
+		const currentProduct = items.value.find(i => i.id === id)
+		if (currentProduct) {
+			currentProduct.isFavorit = !currentProduct.isFavorit
+		}
+	}
+
 	return {
 		items,
 		totalProduct,
@@ -53,7 +60,8 @@ export const useCartStore = defineStore('cart', () => {
 		addItem,
 		updateQuantity,
 		removeItem,
-		clearCard
+		clearCard,
+		toggleFavorit
 	}
 
 }, {

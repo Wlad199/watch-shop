@@ -5,5 +5,6 @@ export default interface CartItem {
 	imageUrl: string,
 	price: number,
 	oldPrice?: number | null,
-	quantity: number
+	quantity: number,
+	isFavorit: boolean
 }
