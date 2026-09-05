@@ -23,9 +23,11 @@
 					<NuxtLink to="/login">
 						<UserIcon height="1em" />
 					</NuxtLink>
-					<IconWithBadge :quantity="wishList.list.length">
-						<HeartIcon height="1em" />
-					</IconWithBadge>
+					<NuxtLink to="/favorites">
+						<IconWithBadge :quantity="wishList.list.length">
+							<HeartIcon height="1em" />
+						</IconWithBadge>
+					</NuxtLink>
 					<NuxtLink to="/cart">
 						<IconWithBadge :quantity="totalProductInCart">
 							<Cart16RegularIcon height="1em" />

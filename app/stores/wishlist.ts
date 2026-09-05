@@ -14,7 +14,6 @@ export const useWishlistStore = defineStore('wishlist', () => {
 		} else {
 			list.value.push(id)
 		}
-		console.log(list.value)
 	}
 	return {
 		list,

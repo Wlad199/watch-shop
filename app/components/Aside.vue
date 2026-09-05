@@ -98,11 +98,12 @@ $primary-color: #6750a4;
 	padding: 5px;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	margin: 20px 0;
+	//margin: 20px 0;
 	align-self: start;
 	position: sticky;
 	top: 60px;
 	overflow-y: auto;
+	margin-bottom: 20px;
 
 	@media (max-width: 992px) {
 		position: absolute;

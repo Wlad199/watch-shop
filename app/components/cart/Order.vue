@@ -23,8 +23,6 @@ import ButtonSimple from '../elements/ButtonSimple.vue';
 const cartStore = useCartStore()
 const { totalProduct, totalPrice, discountAmount } = storeToRefs(cartStore)
 
-console.log(+discountAmount.value)
-
 </script>
 
 <style scoped lang='scss'>
