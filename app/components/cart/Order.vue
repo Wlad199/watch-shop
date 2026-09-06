@@ -13,15 +13,42 @@
 			<h2>Total</h2>
 			<span>$ {{ totalPrice }}</span>
 		</div>
-		<ButtonSimple type="button">Go to order</ButtonSimple>
+		<ElementsButtonSimple @click="showModal = true" type="button">Go to order</ElementsButtonSimple>
+
+		<ElementsModal v-model="showModal">
+			<template #title>
+				<h2>Please confirm your order</h2>
+			</template>
+			<template #body>
+				<SumUp @confirm="showMessage" @cancel="showModal = false" />
+			</template>
+		</ElementsModal>
+
+		<ElementsModal v-model="showFinalModel">
+			<template #title>
+				<h2 class="modal-title">The order has been confirmed</h2>
+			</template>
+			<template #body>
+				<ElementsButtonSimple type="button" @click="showFinalModel = false" class="button-right">
+					OK
+				</ElementsButtonSimple>
+			</template>
+		</ElementsModal>
+
 	</div>
 </template>
 
 <script setup lang='ts'>
-import ButtonSimple from '../elements/ButtonSimple.vue';
-
 const cartStore = useCartStore()
 const { totalProduct, totalPrice, discountAmount } = storeToRefs(cartStore)
+
+const showModal = ref(false)
+const showFinalModel = ref(false)
+
+const showMessage = () => {
+	showModal.value = false
+	showFinalModel.value = true
+}
 
 </script>
 
@@ -93,5 +120,16 @@ h2 {
 		width: 100%;
 		height: 50px;
 	}
+}
+
+.button-right {
+	display: block;
+	margin-left: auto;
+	width: 100px;
+}
+
+.modal-title {
+	line-height: 130%;
+	font-weight: 400;
 }
 </style>
