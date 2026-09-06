@@ -80,14 +80,9 @@ const hasInStock = computed(() => {
 $primary-color: #6750a4;
 
 .product {
-	flex: 0 0 300px;
 	background-color: #fff;
 	border-radius: 15px;
 	position: relative;
-
-	@media (max-width: 1300px) {
-		flex: 0 0 250px;
-	}
 
 	display: flex;
 	flex-direction: column;

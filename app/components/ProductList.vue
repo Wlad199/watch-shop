@@ -44,12 +44,32 @@ const optionsForSelect = [
 </script>
 
 <style scoped lang='scss'>
+.shop-content {
+	width: 100%;
+}
+
 .products {
-	display: flex;
-	gap: 15px;
-	flex-wrap: wrap;
 	margin-top: 20px;
-	//margin-bottom: 20px;
+	display: grid;
+	width: 100%;
+	gap: 15px;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+	@media (max-width: 1300px) {
+		grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+	}
+
+	@media (max-width: 550px) {
+		grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+	}
+
+	@media (max-width: 500px) {
+		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	}
+
+	@media (max-width: 500px) {
+		gap: 10px;
+	}
 }
 
 .shop-sort {
