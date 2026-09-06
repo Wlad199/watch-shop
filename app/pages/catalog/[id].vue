@@ -1,5 +1,6 @@
 <template>
 	<div v-if="product" class="container">
+		<ElementsBreadcrumbs />
 		<div class="good-wrapper">
 			<div class="image">
 				<!--<Icon name="material-symbols:favorite-rounded" class="like" />-->
@@ -117,7 +118,8 @@ const addToCart = () => {
 .good-wrapper {
 	display: flex;
 	gap: 20px;
-	margin: 60px 0;
+	margin-top: 30px;
+	margin-bottom: 60px;
 
 	@media (max-width: 767px) {
 		display: block;
@@ -258,6 +260,7 @@ const addToCart = () => {
 
 			span {
 				flex: 0 0 50%;
+				line-height: 130%;
 
 				&:first-child {
 					font-size: 22px;
@@ -267,6 +270,16 @@ const addToCart = () => {
 				&:last-child {
 					font-size: 18px;
 					color: #000;
+				}
+
+				@media (max-width: 767px) {
+					&:first-child {
+						flex: 1 1 auto;
+					}
+
+					&:last-child {
+						flex: 0 0 20%;
+					}
 				}
 			}
 		}
