@@ -13,7 +13,12 @@
 			<h2>Total</h2>
 			<span>$ {{ totalPrice }}</span>
 		</div>
-		<ElementsButtonSimple @click="showModal = true" type="button">Go to order</ElementsButtonSimple>
+		<ElementsButtonSimple
+			@click="showModal = true"
+			type="button"
+			:disabled="!cartStore.items.length">
+			Go to order
+		</ElementsButtonSimple>
 
 		<ElementsModal v-model="showModal">
 			<template #title>
@@ -48,6 +53,7 @@ const showFinalModel = ref(false)
 const showMessage = () => {
 	showModal.value = false
 	showFinalModel.value = true
+	cartStore.items = []
 }
 
 </script>

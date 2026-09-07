@@ -1,13 +1,13 @@
 <template>
-	<div class="quantity">
+	<div class="quantity row">
 		<span>Quantity</span>
 		<span>{{ totalProduct }}</span>
 	</div>
-	<div v-if="discountAmount" class="discount">
+	<div v-if="parseFloat(discountAmount)" class="discount row">
 		<span>Discount</span>
 		<span>$ {{ discountAmount }}</span>
 	</div>
-	<div class="total">
+	<div class="total ">
 		<span>Total</span>
 		<span>$ {{ totalPrice }}</span>
 	</div>
@@ -37,17 +37,16 @@ div:not(:last-child) {
 	font-size: 20px;
 	margin-bottom: 30px;
 	position: relative;
+}
 
-	&:nth-child(3):after,
-	&:nth-child(4):after {
-		position: absolute;
-		content: '';
-		bottom: -15px;
-		left: 0;
-		width: 100%;
-		height: 1px;
-		background-color: #c4c4c4;
-	}
+.row:after {
+	position: absolute;
+	content: '';
+	bottom: -15px;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #c4c4c4;
 }
 
 

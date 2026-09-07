@@ -29,7 +29,7 @@ button {
 	}
 
 	&:disabled {
-		background-color: #c1daff;
+		background-color: #b8acd7;
 		cursor: default;
 	}
 }

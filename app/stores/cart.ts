@@ -1,7 +1,6 @@
 import type CartItem from "~/types/cartItem"
 
 export const useCartStore = defineStore('cart', () => {
-	//const items = ref<CartItem[]>([])
 
 	const items = useCookie<CartItem[]>('cart_items', {
 		default: () => [],
