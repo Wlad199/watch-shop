@@ -20,6 +20,9 @@
 				</nav>
 
 				<div class="icons">
+					<button @click="toggleTheme" class="theme">
+						{{ $colorMode.value === 'dark' ? '🌙' : '☀️' }}
+					</button>
 					<NuxtLink to="/login">
 						<UserIcon height="1em" />
 					</NuxtLink>
@@ -73,6 +76,11 @@ const totalProductInCart = computed(() => {
 })
 
 const wishList = useWishlistStore()
+
+const colorMode = useColorMode()
+const toggleTheme = () => {
+	colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
+}
 
 </script>
 
@@ -284,6 +292,17 @@ $primary-color: #6750a4;
 		gap: 10px;
 		margin-left: 10px;
 		font-size: 25px;
+	}
+}
+
+.theme {
+	font-size: 20px;
+	background-color: rgba($color: #6750a4, $alpha: 0.1);
+	padding: 5px;
+	border-radius: 5px;
+
+	@media (max-width: 767px) {
+		font-size: 16px;
 	}
 }
 </style>

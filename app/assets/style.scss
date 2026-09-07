@@ -4,6 +4,7 @@ body {
 	font-family: "Montserrat", sans-serif;
 	line-height: 130%;
 	background-color: #f5f7fa;
+	transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -12,4 +13,99 @@ body {
 	padding: 0 10px;
 }
 
+.fake-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 80vh;
+
+	h1 {
+		font-size: 40px;
+	}
+}
+
 // ================================= //
+
+
+/* Стили для темной темы */
+.dark {
+	--text-color: #ffffff;
+	--darkMainColor: #2e2e31;
+	--darkSecondColor: #4d4d51;
+
+	body {
+		background-color: var(--darkMainColor);
+		color: var(--text-color);
+
+		.content .container {
+			background-color: var(--darkMainColor);
+		}
+
+		.header,
+		.footer,
+		.aside,
+		.custom-select {
+			background-color: var(--darkSecondColor);
+		}
+
+
+		.custom-select .select-options {
+			background-color: var(--darkSecondColor);
+		}
+
+		.product {
+			background-color: var(--darkSecondColor);
+
+			.name {
+				color: #fff;
+			}
+
+			.brand {
+				color: #b5b5b5;
+			}
+		}
+
+		.cart-wrapper {
+
+			.label,
+			.cart-order {
+				background-color: var(--darkSecondColor);
+			}
+
+			.count {
+				background-color: var(--darkMainColor);
+			}
+		}
+
+		.login-wrapper {
+			.name {
+				background-color: var(--darkSecondColor);
+			}
+		}
+
+		.popup .content {
+			background-color: var(--darkSecondColor);
+			color: #fff;
+		}
+
+		.router-link-active.router-link-exact-active {
+			color: #ff4d4f;
+
+			&:after {
+				background-color: #ff4d4f;
+			}
+		}
+
+		.menu._active {
+			background-color: var(--darkSecondColor);
+		}
+
+		footer {
+
+			.text,
+			.footer-bottom {
+				color: #c9c9c9;
+			}
+		}
+	}
+}

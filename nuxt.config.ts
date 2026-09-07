@@ -9,6 +9,7 @@ export default defineNuxtConfig({
 		'@nuxt/icon',
 		'@vee-validate/nuxt',
 		'@vueuse/nuxt',
+		'@nuxtjs/color-mode'
 	],
 	//css: ['./app/assets/null.scss', './app/assets/style.scss'],
 	css: ['~/assets/null.scss', '~/assets/style.scss'],
@@ -31,11 +32,5 @@ export default defineNuxtConfig({
 				{ name: 'description', content: 'This project on Nuxt4' }
 			],
 		}
-	},
-	image: {
-		//quality: 80
-	},
-	plugins: [
-		//'~/plugins/auth.ts'
-	]
+	}
 })
