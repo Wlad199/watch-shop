@@ -16,9 +16,8 @@ A store selling wristwatches.
 
   
 
-`<img src="./public/preview.png" width="400" />`
+<img src="./public/preview.png" width="400" />
 
-  
 
 ---
 
