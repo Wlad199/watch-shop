@@ -1,75 +1,59 @@
-# Nuxt Minimal Starter
+# Vue 3 Watch Shop
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+  
 
-## Setup
+A store selling wristwatches.
 
-Make sure to install dependencies:
 
-```bash
-# npm
+- A page with a list of products.
+- Product filtering occurs on the server side.
+- Works with its own database.
+- Registration is required to place an order and gain access to the cart.
+- There is a page for each product.
+- It is possible to add products to favorites.
+- It is possible to change the color scheme.
+- There is an adaptive design for devices up to 320px.
+
+  
+
+`<img src="./public/preview.png" width="400" />`
+
+  
+
+---
+
+  
+
+## Project Setup
+
+  
+
+```sh
+
 npm install
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+  
 
-Start the development server on `http://localhost:3000`:
+### Compile and Hot-Reload for Development
 
-```bash
-# npm
+  
+
+```sh
+
 npm run dev
 
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+  
 
-Build the application for production:
+### Compile and Minify for Production
 
-```bash
-# npm
+  
+
+```sh
+
 npm run build
 
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

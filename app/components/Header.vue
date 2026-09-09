@@ -25,15 +25,15 @@
 							{{ $colorMode.value === 'dark' ? '🌙' : '☀️' }}
 						</button>
 					</ClientOnly>
-					<NuxtLink to="/login">
+					<NuxtLink to="/login" aria-label="User">
 						<UserIcon height="1em" />
 					</NuxtLink>
-					<NuxtLink to="/favorites">
+					<NuxtLink to="/favorites" aria-label="Wish list">
 						<IconWithBadge :quantity="wishList.list.length">
 							<HeartIcon height="1em" />
 						</IconWithBadge>
 					</NuxtLink>
-					<NuxtLink to="/cart">
+					<NuxtLink to="/cart" aria-label="Cart">
 						<IconWithBadge :quantity="totalProductInCart">
 							<Cart16RegularIcon height="1em" />
 						</IconWithBadge>
