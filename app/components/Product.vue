@@ -153,7 +153,7 @@ $primary-color: #6750a4;
 }
 
 .product-count {
-	background-color: $primary-color;
+	background-color: $primary-color !important;
 	color: #fff;
 	justify-content: space-around;
 }
