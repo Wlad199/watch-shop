@@ -33,7 +33,7 @@ const increaseQuantity = (id: number) => {
 
 <style scoped lang='scss'>
 .count {
-	background-color: #f5f7fa;
+	//background-color: #f5f7fa;
 	height: 40px;
 	min-width: 100px;
 	border-radius: 10px;
