@@ -171,7 +171,6 @@
 }
 
 .footer-bottom {
-	//background-color: #f5f7fa;
 	padding: 25px 0;
 	text-align: center;
 	color: #606060;

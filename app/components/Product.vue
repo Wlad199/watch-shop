@@ -146,7 +146,6 @@ $primary-color: #6750a4;
 	color: #fff;
 	font-size: 18px;
 	transition: all 0.2s ease 0s;
-	//margin-top: 10px;
 
 	&:hover {
 		background-color: #503e7d;

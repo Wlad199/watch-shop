@@ -20,9 +20,11 @@
 				</nav>
 
 				<div class="icons">
-					<button @click="toggleTheme" class="theme">
-						{{ $colorMode.value === 'dark' ? '🌙' : '☀️' }}
-					</button>
+					<ClientOnly>
+						<button @click="toggleTheme" class="theme">
+							{{ $colorMode.value === 'dark' ? '🌙' : '☀️' }}
+						</button>
+					</ClientOnly>
 					<NuxtLink to="/login">
 						<UserIcon height="1em" />
 					</NuxtLink>

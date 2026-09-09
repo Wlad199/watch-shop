@@ -68,7 +68,6 @@ h2 {
 .row {
 	display: flex;
 	gap: 20px;
-	//align-items: center;
 	justify-content: space-between;
 	margin-bottom: 10px;
 	font-size: 20px;

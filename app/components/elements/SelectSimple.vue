@@ -42,7 +42,6 @@ const selectOption = (value: string) => {
 	position: relative;
 	width: 300px;
 	user-select: none;
-	/*margin: 30px 0;*/
 	background-color: #fff;
 }
 

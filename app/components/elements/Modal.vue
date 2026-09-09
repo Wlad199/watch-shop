@@ -70,7 +70,6 @@ onUnmounted(() => document.body.classList.remove('_lock'))
 	left: 0;
 	width: 100%;
 	height: 100%;
-	//background-color: rgba(#000, 0.8);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -130,7 +129,6 @@ onUnmounted(() => document.body.classList.remove('_lock'))
 
 .fade-enter-active,
 .fade-leave-active {
-	//transition: opacity 0.3s ease;
 	transition: all 0.2s ease 0s;
 }
 

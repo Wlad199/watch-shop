@@ -3,7 +3,6 @@
 		<ElementsBreadcrumbs />
 		<div class="good-wrapper">
 			<div class="image">
-				<!--<Icon name="material-symbols:favorite-rounded" class="like" />-->
 				<ElementsLike :id="product.id" class="absolute" />
 				<NuxtImg :src="product.image_url" format="webp" :alt="product.title" />
 			</div>

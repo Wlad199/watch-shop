@@ -11,7 +11,6 @@ export default defineNuxtConfig({
 		'@vueuse/nuxt',
 		'@nuxtjs/color-mode'
 	],
-	//css: ['./app/assets/null.scss', './app/assets/style.scss'],
 	css: ['~/assets/null.scss', '~/assets/style.scss'],
 	vite: {
 		optimizeDeps: {
@@ -25,11 +24,11 @@ export default defineNuxtConfig({
 	},
 	app: {
 		head: {
-			title: 'Template Nuxt4',
+			title: 'Watch Store',
 			meta: [
 				{ charset: 'utf-8' },
 				{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
-				{ name: 'description', content: 'This project on Nuxt4' }
+				{ name: 'description', content: 'Internet shop' }
 			],
 		}
 	}

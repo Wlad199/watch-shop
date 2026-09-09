@@ -4,7 +4,6 @@ body {
 	font-family: "Montserrat", sans-serif;
 	line-height: 130%;
 	background-color: #f5f7fa;
-	transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -77,6 +76,14 @@ body {
 			}
 		}
 
+		.card__params li span[data-v-117fcae9]:last-child {
+			color: #b9b9b9;
+		}
+
+		.description__text {
+			color: #fff;
+		}
+
 		.login-wrapper {
 			.name {
 				background-color: var(--darkSecondColor);
@@ -108,4 +115,18 @@ body {
 			}
 		}
 	}
+}
+
+body,
+.header,
+.footer,
+.aside,
+.custom-select,
+.content .container,
+.product,
+.login-wrapper .name,
+.label,
+.cart-order,
+.count {
+	transition: background-color 0.3s, color 0.3s;
 }

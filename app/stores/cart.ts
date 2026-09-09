@@ -63,6 +63,4 @@ export const useCartStore = defineStore('cart', () => {
 		toggleFavorit
 	}
 
-}, {
-	//persist: true
 })

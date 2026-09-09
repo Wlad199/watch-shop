@@ -10,7 +10,6 @@
 			<div class="description__brand">{{ product.brand }}</div>
 			<div class="description__action">
 				<div class="description__like">
-					<!--<Icon name="material-symbols:favorite-rounded" class="icon like" />-->
 					<ElementsLike :id="product.id" />
 				</div>
 				<div @click="removeItem(product.id)" class="description__delete">
@@ -61,7 +60,6 @@ const hasInStock = computed(() => {
 .product {
 	display: flex;
 	gap: 10px;
-	//justify-content: space-between;
 	background-color: #fff;
 	padding: 15px;
 	margin-bottom: 5px;
